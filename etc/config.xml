@@ -1,0 +1,24 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <gdw>
+            <seo>
+                <custom_robots_list>
+checkout_cart_index
+checkout_index_index
+checkout_onepage_success
+customer_account
+customer_account_confirmation
+customer_account_create
+customer_account_createpassword
+customer_account_edit
+customer_account_forgotpassword
+customer_account_index
+customer_account_login
+customer_account_logoutsuccess
+customer_address_form
+customer_address_index
+                </custom_robots_list>
+            </seo>
+        </gdw>
+    </default>
+</config>

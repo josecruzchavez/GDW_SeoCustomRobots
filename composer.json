@@ -1,0 +1,37 @@
+{
+  "name": "gdw/seocustomrobots",
+  "description": "Custom metatag Tobots by pages, categories and products for Magento 2",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "José Cruz Chávez",
+      "email": "jcruz@gdw.mx",
+      "homepage": "https://gdw.mx",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "~7.3.0||~7.4.0||~8.0.0",
+    "gdw/core": "^2.0"
+  },
+  "minimum-stability": "dev",
+  "keywords": [
+    "seo",
+    "free",
+    "magento 2",
+    "metatag",
+    "robots",
+    "gdw",
+    "gestion digital web"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "GDW\\SeoCustomRobots\\": ""
+    }
+  }
+}

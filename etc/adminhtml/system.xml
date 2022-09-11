@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="gdwseo">
+            <tab>gdwcore</tab>
+            <group id="robots" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Robots</label>
+                <field id="enable_custom_robots" translate="label" type="select" sortOrder="59" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable custom Robots</label>
+                    <config_path>gdw/seo/custom_robots</config_path>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>This optión invalid global config robots and use custom attribute for products, categories and pages.</comment>
+                </field>
+                <field id="list_custom_robots" translate="label" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Full Action Name to noindex,nofollow</label>
+                    <config_path>gdw/seo/custom_robots_list</config_path>
+                    <comment>one by line. if match, it'll add noindex,follow</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
