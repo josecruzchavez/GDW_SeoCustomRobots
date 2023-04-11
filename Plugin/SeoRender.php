@@ -29,13 +29,13 @@ class SeoRender
 
     public function beforeRenderMetadata(Renderer $subject)
     {
-        $enableCustomRobots = $this->helperData->getConfigValue('gdw/seo/custom_robots') ?? 1;
+        $enableCustomRobots = $this->helperData->getConfigValue('gdw/seo_robots/enable') ?? 1;
         
         if($enableCustomRobots == 1){
         
             $noIndexArray = [];
             $fullActionname = $this->request->getFullActionName();
-            $noIndexList = $this->helperData->getConfigValue('gdw/seo/custom_robots_list') ?? '';
+            $noIndexList = $this->helperData->getConfigValue('gdw/seo_robots/custom_robots_list') ?? '';
             if($noIndexList != ''){$noIndexArray = explode("\n", str_replace("\r", "", $noIndexList));}
             
             switch ($fullActionname) {

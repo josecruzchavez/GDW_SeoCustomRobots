@@ -4,6 +4,7 @@ namespace GDW\SeoCustomRobots\Model;
 class Robots extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
                 implements \Magento\Framework\Option\ArrayInterface {
     
+    /* In the product attributes it is necessary to call options */
     public function getAllOptions(){
         return [
             ['value' => 'INDEX,FOLLOW', 'label' => 'INDEX, FOLLOW'],

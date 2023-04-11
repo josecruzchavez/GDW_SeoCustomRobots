@@ -1,7 +1,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <gdw>
-            <seo>
+            <seo_robots>
+                <enable>1</enable>
                 <custom_robots_list>
 checkout_cart_index
 checkout_index_index
@@ -18,7 +19,7 @@ customer_account_logoutsuccess
 customer_address_form
 customer_address_index
                 </custom_robots_list>
-            </seo>
+            </seo_robots>
         </gdw>
     </default>
 </config>
