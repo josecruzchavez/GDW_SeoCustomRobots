@@ -11,19 +11,19 @@ class SeoRender
 {
     protected $page;
     protected $request;
-    protected $helpData;
+    protected $helperData;
     protected $pageConfig;
 
     public function __construct(
         Page $page,
         Http $request,
-        HelperData $helpData,
+        HelperData $helperData,
         PageConfig $pageConfig
     )
     {
         $this->page = $page;
         $this->request = $request;
-        $this->helperData = $helpData;
+        $this->helperData = $helperData;
         $this->pageConfig = $pageConfig; 
     }
 
