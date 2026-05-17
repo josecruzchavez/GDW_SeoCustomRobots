@@ -1,10 +1,16 @@
 # GDW Seo Custom Robots para Magento 2
+[![Latest Stable Version](https://img.shields.io/packagist/v/gdw/seocustomrobots?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots) [![PHP Version Require](https://img.shields.io/packagist/dependency-v/gdw/seocustomrobots/php?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots) [![Magento Framework Require](https://img.shields.io/packagist/dependency-v/gdw/seocustomrobots/magento%2Fframework?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots) [![License](https://img.shields.io/packagist/l/gdw/seocustomrobots?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots)
+
+
+
+
+
 Este módulo tiene la finalidad de personalizar las meta etiqueta Robots de magento 2.
 La meta etiqueta Robots sirve para que google identifique si debe rastrear una url que ha encontrado en un sitio web. Magento por deafult solo trae una opción y esta es global, este módulo habilita nuevos atributos para productos, categorias y páginas para poder personalizar la meta etiqueta robots en cada ocación.
 ## Compatibilidad
 ✓ Magento 2.4.4+ (rama 4.4.x)
 
-![gdw_opengraph](https://php.gdw.mx/github_assets/gdw_seocustomrobots/gdw_seocustomrobots_01.jpg)
+![gdw_opengraph](https://medios.gdw.mx/github_assets/gdw_seocustomrobots/gdw_seocustomrobots_01.jpg)
 
 ## Funciones destacadas
 * Agrega meta etiqueta **Robots** en páginas(cms), productos y categorías.
