@@ -9,10 +9,10 @@ use Magento\Framework\View\Page\Config as PageConfig;
 
 class SeoRender
 {
-    protected $page;
-    protected $request;
-    protected $helperData;
-    protected $pageConfig;
+    protected Page $page;
+    protected Http $request;
+    protected HelperData $helperData;
+    protected PageConfig $pageConfig;
 
     public function __construct(
         Page $page,
@@ -27,7 +27,7 @@ class SeoRender
         $this->pageConfig = $pageConfig; 
     }
 
-    public function beforeRenderMetadata(Renderer $subject)
+    public function beforeRenderMetadata(Renderer $subject): void
     {
         $enableCustomRobots = $this->helperData->getConfigValue('gdw/seo_robots/enable') ?? 1;
         
@@ -35,23 +35,29 @@ class SeoRender
         
             $noIndexArray = [];
             $fullActionname = $this->request->getFullActionName();
-            $noIndexList = $this->helperData->getConfigValue('gdw/seo_robots/custom_robots_list') ?? '';
+            $noIndexList = $this->toString($this->helperData->getConfigValue('gdw/seo_robots/custom_robots_list') ?? '');
             if($noIndexList != ''){$noIndexArray = explode("\n", str_replace("\r", "", $noIndexList));}
             
             switch ($fullActionname) {
                 case 'catalog_product_view':
                         $product = $this->helperData->getCurrentProduct();
-                        $this->pageConfig->setMetadata('robots', $product->getData('gdw_robots'));
+                        if ($product !== null) {
+                            $robots = $product->getCustomAttribute('gdw_robots');
+                            $this->pageConfig->setMetadata('robots', $this->toString($robots ? $robots->getValue() : null));
+                        }
                     break;
                 case 'catalog_category_view':
                         $category = $this->helperData->getCurrentCategory();
-                        $this->pageConfig->setMetadata('robots', $category->getData('gdw_robots'));
+                        if ($category !== null) {
+                            $robots = $category->getCustomAttribute('gdw_robots');
+                            $this->pageConfig->setMetadata('robots', $this->toString($robots ? $robots->getValue() : null));
+                        }
                     break;
                 case 'cms_index_index': /* HomePage */
-                        $this->pageConfig->setMetadata('robots', $this->page->getData('gdw_robots'));
+                        $this->pageConfig->setMetadata('robots', $this->toString($this->page->getData('gdw_robots')));
                     break;
                 case 'cms_page_view':
-                        $this->pageConfig->setMetadata('robots', $this->page->getData('gdw_robots'));
+                        $this->pageConfig->setMetadata('robots', $this->toString($this->page->getData('gdw_robots')));
                     break;
             }
 
@@ -61,5 +67,10 @@ class SeoRender
                 }
             }
         }        
+    }
+
+    private function toString(mixed $value): string
+    {
+        return is_scalar($value) ? (string) $value : '';
     }
 }

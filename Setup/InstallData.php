@@ -15,8 +15,8 @@ use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
 
 class InstallData implements InstallDataInterface
 {
-    protected $eavConfig;
-    protected $objectManager;
+    protected Config $eavConfig;
+    protected ObjectManagerInterface $objectManager;
     
     public function __construct(
         Config $eavConfig,
@@ -26,7 +26,7 @@ class InstallData implements InstallDataInterface
         $this->objectManager = $objectManager;
     }
 
-    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context): void
     {
         $setup->startSetup();
         
@@ -34,7 +34,7 @@ class InstallData implements InstallDataInterface
         /** @var EavSetup $eavSetup */
         $eavSetup = $this->objectManager->create(EavSetup::class, ['setup' => $setup]);
 
-        if(!$this->isAttributeExists(Product::ENTITY, 'gdw_robots')){
+        if (!$this->isAttributeExists(Product::ENTITY, 'gdw_robots')) {
             $eavSetup->addAttribute(Product::ENTITY, 'gdw_robots', [
                 'type' => 'varchar',
                 'backend' => '',
@@ -65,7 +65,7 @@ class InstallData implements InstallDataInterface
         /** @var CategorySetup $categorySetup */
         $categorySetup = $this->objectManager->create(CategorySetup::class, ['setup' => $setup]);
  
-        if(!$this->isAttributeExists(Category::ENTITY, 'gdw_robots')){
+        if (!$this->isAttributeExists(Category::ENTITY, 'gdw_robots')) {
             $categorySetup->addAttribute(Category::ENTITY, 'gdw_robots', 
                 [
                     'type'      => 'varchar',
@@ -86,9 +86,9 @@ class InstallData implements InstallDataInterface
         $setup->endSetup();
     }
 
-    public function isAttributeExists($type, $field)
+    public function isAttributeExists(string $type, string $field): bool
     {
         $attr = $this->eavConfig->getAttribute($type, $field);
-        return ($attr && $attr->getId());
+        return (bool) $attr->getId();
     }
 }
