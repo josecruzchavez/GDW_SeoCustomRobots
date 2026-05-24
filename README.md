@@ -5,7 +5,9 @@
 Este módulo tiene la finalidad de personalizar las meta etiqueta Robots de magento 2.
 La meta etiqueta Robots sirve para que google identifique si debe rastrear una url que ha encontrado en un sitio web. Magento por deafult solo trae una opción y esta es global, este módulo habilita nuevos atributos para productos, categorias y páginas para poder personalizar la meta etiqueta robots en cada ocación.
 ## Compatibilidad
-✓ Magento 2.4.4+ (rama 4.4.x)
+- Rama 4.4.x: Magento 2.4.4+ con PHP 8.1 a 8.3
+- Rama 4.x: Magento 2.4.0 a 2.4.3 con PHP 7.4
+- Rama 3.x: Magento 2.3.x con PHP 7.4
 
 ![gdw_opengraph](https://medios.gdw.mx/github_assets/gdw_seocustomrobots/gdw_seocustomrobots_01.jpg)
 
@@ -46,7 +48,7 @@ php bin/magento cache:flush
 ### Eliminación
 
 ```
-php bin/magento module:disbale GDW_SeoCustomRobots
+php bin/magento module:disable GDW_SeoCustomRobots
 composer remove gdw/seocustomrobots
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
