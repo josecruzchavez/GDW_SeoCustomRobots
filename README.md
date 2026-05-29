@@ -2,10 +2,10 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/gdw/seocustomrobots?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots) [![PHP Version Require](https://img.shields.io/packagist/dependency-v/gdw/seocustomrobots/php?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots) [![Magento Framework Require](https://img.shields.io/packagist/dependency-v/gdw/seocustomrobots/magento%2Fframework?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots) [![License](https://img.shields.io/packagist/l/gdw/seocustomrobots?style=for-the-badge)](https://packagist.org/packages/gdw/seocustomrobots)
 
 
-Este módulo tiene la finalidad de personalizar las meta etiqueta Robots de magento 2.
-La meta etiqueta Robots sirve para que google identifique si debe rastrear una url que ha encontrado en un sitio web. Magento por deafult solo trae una opción y esta es global, este módulo habilita nuevos atributos para productos, categorias y páginas para poder personalizar la meta etiqueta robots en cada ocación.
+Este módulo tiene la finalidad de personalizar la meta etiqueta Robots de Magento 2.
+La meta etiqueta Robots sirve para que Google identifique si debe rastrear una URL que ha encontrado en un sitio web. Magento por default solo trae una opción y esta es global; este módulo habilita nuevos atributos para productos, categorías y páginas para poder personalizar la meta etiqueta robots en cada ocasión.
 ## Compatibilidad
-- Rama 4.4.x: Magento 2.4.4+ con PHP 8.1 a 8.3
+- Rama 4.4.x: Magento 2.4.4+ con PHP 8.1+
 - Rama 4.x: Magento 2.4.0 a 2.4.3 con PHP 7.4
 - Rama 3.x: Magento 2.3.x con PHP 7.4
 
@@ -13,10 +13,10 @@ La meta etiqueta Robots sirve para que google identifique si debe rastrear una u
 
 ## Funciones destacadas
 * Agrega meta etiqueta **Robots** en páginas(cms), productos y categorías.
-* Permite habilitar la sobre escritura desde el administrador.
-* Utiliza los campos meta nativos de magento.
-* Compaltible con multitiendas.
-* Permite listar **FullActionsNames** para modificar la etiqueta robots en zonas que no son importantes para el rastreo de google
+* Permite habilitar la sobrescritura desde el administrador.
+* Utiliza los campos meta nativos de Magento.
+* Compatible con multitiendas.
+* Permite listar **FullActionsNames** para modificar la etiqueta robots en zonas que no son importantes para el rastreo de Google.
 <br/>
 
 ###### Ejecuta los siguientes comandos en la ruta base de Magento.
